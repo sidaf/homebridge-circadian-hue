@@ -38,6 +38,7 @@ class CircadianHue implements AccessoryPlugin {
   private readonly name: string;
 
   private cacheDirectory: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private storage: any;
 
   private sleepSwitch: SleepSwitch;
@@ -303,6 +304,7 @@ class CircadianHue implements AccessoryPlugin {
                           metadata.last_updated.getTime() === new Date(1970, 1, 1).getTime()) {
 
                     //this.log.debug(logDebugPrefix + "Current brightness saturation value is " + bri + ", colortemp mired value is " + ct);
+                    // eslint-disable-next-line max-len
                     //this.log.debug(logDebugPrefix + "Calculated brightness saturation value is " + brightnessSaturation + ", colourtemp mired value is " + colortempMired);
 
                     if ((bri !== brightnessSaturation && this.excludeBrightness.includes(String(light.id)) === false) ||
@@ -341,6 +343,7 @@ class CircadianHue implements AccessoryPlugin {
                       metadata.ct = ct;
                     }
                   } else {
+                    // eslint-disable-next-line max-len
                     this.log(color.blue(logPrefix + 'State has changed since last update, presuming manual override [bri:' + metadata.bri + '=>' + bri + '|ct:' + metadata.ct + '=>' + ct + ']'));
                     metadata.manual = true;
                   }
@@ -473,17 +476,13 @@ class CircadianHue implements AccessoryPlugin {
       } else { // parabola after solar_noon
         x = sunset_seconds;
       }
-    }
-    // sunset_sunrise parabola
-    else if (now_seconds > sunset_seconds && now_seconds < sunrise_seconds) {
+    } else if (now_seconds > sunset_seconds && now_seconds < sunrise_seconds) { // sunset_sunrise parabola
       h = solar_midnight_seconds;
       k = -100;
       // parabola before solar_midnight
       if (now_seconds < solar_midnight_seconds) {
         x = sunset_seconds;
-      }
-      // parabola after solar_midnight
-      else {
+      } else { // parabola after solar_midnight
         x = sunrise_seconds;
       }
     }
