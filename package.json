@@ -2,7 +2,7 @@
   "private": false,
   "displayName": "Homebridge Circadian Hue",
   "name": "homebridge-circadian-hue",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "This plugin interacts with a Hue Hub instance and slowly synchronizes your color changing lights with the regular naturally occurring color temperature of the sky throughout the day. This gives your environment a more natural feel, with cooler hues during the midday and warmer tints near twilight and dawn. Based on the Circadian Lighting Home Assistant Component",
   "license": "Apache-2.0",
   "repository": {
@@ -30,6 +30,7 @@
     "bash-color": "^0.0.4",
     "homebridge-config-ui-x": "^4.41.2",
     "node-hue-api": "^4.0.8",
+    "node-persist": "^0.0.11",
     "suncalc": "^1.8.0"
   },
   "devDependencies": {
