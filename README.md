@@ -36,7 +36,7 @@ This plugin interacts with a Hue Hub instance and slowly synchronizes your color
 
 `excludeManualOverride` is a comma seperated list of lights that will not be manually overridable*.
 
- * When the plugin detects that the characteristics of a light has significantly changed since it was last checked, the light will be put into "manual mode" and no further brightness or colour temperature changes will be applied by the plugin to this specific light. To reset, and have the light controlled by the plugin again, simply turn the light off and on.
+\* When the plugin detects that the characteristics of a light has significantly changed since it was last checked, the light will be put into "manual mode" and no further brightness or colour temperature changes will be applied by the plugin to this specific light. To reset, and have the light controlled by the plugin again, simply turn the light off and on.
 
 ## Example Config
 
